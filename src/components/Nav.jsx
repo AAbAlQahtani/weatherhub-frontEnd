@@ -33,7 +33,7 @@ export default function Navbar() {
       <div className="hidden md:flex items-center gap-3">
         {user ? (
           <>
-            <span className="text-sm text-gray-500">Hi, {user.email}</span>
+            {/* <span className="text-sm text-gray-500">Hi, {user.email}</span> */}
             <button onClick={handleLogout} className="bg-red-500 text-white px-4 py-2 rounded hover:bg-red-600">
               Logout
             </button>

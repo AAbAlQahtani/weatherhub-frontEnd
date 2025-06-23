@@ -7,7 +7,7 @@ import Swal from "sweetalert2";
 export default function Login() {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
-  const [loading, setLoading] = useState(false); // ✅
+  const [loading, setLoading] = useState(false);
   const navigate = useNavigate();
 
   const handleLogin = async () => {
@@ -21,7 +21,7 @@ export default function Login() {
     }
 
     try {
-      setLoading(true); // ✅ Start loading
+      setLoading(true);
 
       const res = await axios.post(
         "https://weatherhub-project-be.onrender.com/api/auth/signin",
@@ -45,7 +45,7 @@ export default function Login() {
         text: "Invalid email or password.",
       });
     } finally {
-      setLoading(false); // ✅ Stop loading
+      setLoading(false);
     }
   };
 
@@ -54,7 +54,7 @@ export default function Login() {
       <div className="bg-white p-8 rounded-xl shadow-xl w-full max-w-md">
         <h2 className="text-3xl font-bold mb-6 text-center text-sky-700">Login to WeatherHub</h2>
 
-        {/* Email Input */}
+       
         <div className="mb-4">
           <label className="mb-1 text-gray-700 flex items-center gap-1">
             <MdEmail /> Email
@@ -68,7 +68,6 @@ export default function Login() {
           />
         </div>
 
-        {/* Password Input */}
         <div className="mb-6">
           <label className=" mb-1 text-gray-700 flex items-center gap-1">
             <MdLock /> Password
@@ -82,7 +81,7 @@ export default function Login() {
           />
         </div>
 
-        {/* Login Button */}
+        
         <button
           onClick={handleLogin}
           className="w-full bg-sky-500 hover:bg-sky-600 text-white font-medium py-2 rounded transition duration-200"

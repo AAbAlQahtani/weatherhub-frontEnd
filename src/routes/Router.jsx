@@ -11,7 +11,7 @@ import Login from '../pages/Login';
 import Signup from '../pages/Signup';
 import Weather from '../pages/Weather';
 import History from '../pages/History';
-// import Footer from '../components/Footer';
+import Footer from '../components/Footer';
 
 
 function Layout() {
@@ -20,7 +20,7 @@ function Layout() {
         <>
             <Nav />
             <Outlet />
-            {/* <Footer /> */}
+            <Footer />
         </>
 
     );
