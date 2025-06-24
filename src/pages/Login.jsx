@@ -29,9 +29,9 @@ export default function Login() {
         { withCredentials: true }
       );
 
-      localStorage.setItem("user", JSON.stringify(res.data));
-      localStorage.setItem("token", res.data.token);
 
+      localStorage.setItem("token", res.data.data.accessToken);
+localStorage.setItem("user", JSON.stringify(res.data.data.user));
       Swal.fire({
         icon: "success",
         title: "Login successful!",

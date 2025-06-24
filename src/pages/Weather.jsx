@@ -12,8 +12,8 @@ export default function Weather() {
   const navigate = useNavigate();
 
   useEffect(() => {
-    const user = localStorage.getItem("user");
-    if (!user) {
+    const token = localStorage.getItem("token");
+    if (!token) {
       Swal.fire({
         icon: "warning",
         title: "Unauthorized",
@@ -34,9 +34,14 @@ export default function Weather() {
 
     try {
       setLoading(true);
+      const token = localStorage.getItem("token");
       const res = await axios.get(
         `https://weatherhub-project-be.onrender.com/api/weather?lat=${lat}&lon=${lon}`,
-        { withCredentials: true }
+        {
+          headers: {
+            Authorization: `Bearer ${token}`
+          }
+        }
       );
       setWeather(res.data.data);
     } catch (err) {
